@@ -1,0 +1,16 @@
++++
+title = 'Optimizing Image Storage for Your Blog with Cloudflare R2 Object Storage'
+date = 2023-10-16T20:18:35+08:00
+draft = false
++++
+
+Where are your blog's images stored? Many blogs have their own storage solutions. For instance, when using WordPress to edit a blog post, images are uploaded to a specific folder on the server, alongside CSS and JS files. Similarly, markdown-based blog systems like Hugo allow you to upload images to the /public folder and then insert them into your posts using markdown syntax.
+
+However, this approach comes with two notable drawbacks:
+
+* Slow image access: Large image files can result in slow loading times, especially when the server has limited bandwidth or is located in an unfavorable geographic location. This can lead to a suboptimal user experience.
+* Management challenges: Storing source code and image files on the server can be problematic. In the event of a server compromise, you risk losing your files unless you have backups. Additionally, migration can be tricky, particularly if you are managing multiple physical servers. You may face challenges in ensuring that the same image files are accessible across all servers. Simple replication can consume significant disk space, while solely referencing image files from one server can reduce overall availability.
+
+In such scenarios, introducing Cloudflare R2 Object Storage can be a solution. This service offers a limited free tier with specific usage limits, including storage under 10GB, fewer than 1 million 1st-level operations (e.g., writes) per month, and fewer than 10 million 2nd-level operations (e.g., reads) per month. If you exceed these limits, additional fees may apply.
+
+Using Cloudflare R2 is straightforward. Start by registering for a Cloudflare account and logging in. In the left panel, navigate to R2, where you can create a 'bucket.' From there, you can upload your files directly from the dashboard. To make these uploaded files accessible from external sources, you'll need to associate them with a domain. It's essential to have the domain already added to your Cloudflare account, and you can find detailed instructions in related tutorials. Once the domain is configured, you can click on a specific image to obtain its URL, which you can then use to add images to your blog.
