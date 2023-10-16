@@ -1,8 +1,11 @@
-+++
-title = 'My First Post'
-date = 2023-10-08T19:39:35+08:00
-draft = false
-+++
+---
+title: My first post
+date: '2023-10-08'
+tags: ['hello']
+draft: false
+summary: draft post
+images: []
+---
 
 2代 fengrin.me 上线。这几天很坑很坑，遇到很多匪夷所思的活儿。
 
